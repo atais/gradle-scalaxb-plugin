@@ -18,8 +18,8 @@ group = "com.github.alisiikh"
 version = "1.0-SNAPSHOT"
 
 apply plugin: "scala"
-apply plugin: "com.github.alisiikh.scalaxb"
 apply plugin: "org.scoverage"
+apply plugin: "com.github.alisiikh.scalaxb"
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
