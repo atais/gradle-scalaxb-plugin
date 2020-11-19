@@ -9,12 +9,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.github.alisiikh:gradle-scalaxb-plugin:0.1.0"
+        classpath "com.github.alisiikh:gradle-scalaxb-plugin:0.2.0"
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.10.3'
 }
 
 group = 'com.github.alisiikh'

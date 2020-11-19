@@ -24,7 +24,7 @@ package com.github.alisiikh.scalaxb
 import groovy.transform.ToString
 import org.gradle.api.Project
 
-@ToString(excludes = 'project', includeNames = true, includePackage = false)
+@ToString(includeNames = true, includePackage = false)
 class ScalaxbExtension {
     // TODO: have a look into
     // https://github.com/eed3si9n/scalaxb/blob/master/cli/src/main/scala/scalaxb/compiler/Main.scala

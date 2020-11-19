@@ -1,22 +1,8 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        jcenter()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath 'gradle.plugin.com.github.maiflai:gradle-scalatest:0.19'
-        classpath 'gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.14.0'
-        classpath 'com.diffplug.spotless:spotless-plugin-gradle:3.7.0'
-        classpath "com.gradle.publish:plugin-publish-plugin:0.9.9"
-    }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.10.3'
+plugins {
+    id "com.github.maiflai.scalatest" version "0.29"
+    id "com.github.hierynomus.license" version "0.15.0"
+    id "com.diffplug.spotless" version "5.8.2"
+    id "com.gradle.plugin-publish" version "0.12.0"
 }
 
 group = projectGroup
@@ -25,11 +11,6 @@ version = projectVersion
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'groovy'
 apply plugin: 'maven-publish'
-apply plugin: 'com.gradle.plugin-publish'
-apply plugin: 'com.github.hierynomus.license'
-apply plugin: 'com.diffplug.gradle.spotless'
-apply plugin: 'com.github.maiflai.scalatest'
-
 apply from: 'libs.gradle'
 
 sourceCompatibility = '1.8'
@@ -86,7 +67,7 @@ license {
 
 spotless {
     scala {
-        scalafmt('1.4.0').configFile('.scalafmt.conf')
+        scalafmt('2.6.1').configFile('.scalafmt.conf')
     }
     format 'misc', {
         target '**/*.gradle', '**/*.properties'
