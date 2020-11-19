@@ -10,17 +10,19 @@ buildscript {
 
     dependencies {
         classpath "com.github.alisiikh:gradle-scalaxb-plugin:0.2.0"
+        classpath "gradle.plugin.org.scoverage:gradle-scoverage:5.0.0"
     }
 }
 
-group = 'com.github.alisiikh'
-version = '1.0-SNAPSHOT'
+group = "com.github.alisiikh"
+version = "1.0-SNAPSHOT"
 
-apply plugin: 'scala'
-apply plugin: 'com.github.alisiikh.scalaxb'
+apply plugin: "scala"
+apply plugin: "com.github.alisiikh.scalaxb"
+apply plugin: "org.scoverage"
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
 
 repositories {
     mavenLocal()
@@ -29,9 +31,9 @@ repositories {
 }
 
 dependencies {
-    compile 'org.scala-lang:scala-library:2.12.6'
+    compile "org.scala-lang:scala-library:2.12.6"
 }
 
 scalaxb {
-    packageName = 'com.github.alisiikh.example'
+    packageName = "com.github.alisiikh.example"
 }
